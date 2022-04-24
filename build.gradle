@@ -5,9 +5,6 @@ plugins {
 group 'net.iceyleagons'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = '16'
-targetCompatibility = '16'
-
 repositories {
     mavenCentral()
 }
