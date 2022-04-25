@@ -103,13 +103,13 @@ public class NBTInputStream implements Closeable, AutoCloseable {
                 return new DoubleTag(name, this.inputStream.readDouble());
             }
             case BYTE_ARRAY -> {
-                return new ByteArrayTag(name, readByte(this.inputStream));
+                return new ByteArrayTag(name, readByte(inputStream.readInt(), this.inputStream));
             }
             case STRING -> {
-                return new StringTag(name, new String(readByte(this.inputStream), StandardCharsets.UTF_8));
+                return new StringTag(name, new String(readByte(inputStream.readShort(), this.inputStream), StandardCharsets.UTF_8));
             }
             case LIST -> {
-                int childType = this.inputStream.readInt();
+                int childType = this.inputStream.readByte();
                 int length = this.inputStream.readInt();
 
                 final List<Tag> list = new ArrayList<>();
@@ -167,8 +167,7 @@ public class NBTInputStream implements Closeable, AutoCloseable {
         this.inputStream.close();
     }
 
-    private static byte[] readByte(DataInputStream inputStream) throws IOException {
-        int length = inputStream.readInt();
+    private static byte[] readByte(int length, DataInputStream inputStream) throws IOException {
         byte[] data = new byte[length];
         inputStream.readFully(data);
 
