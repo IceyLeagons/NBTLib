@@ -1,0 +1,60 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "net.iceyleagons",
+    "module": "nbtlib",
+    "version": "1.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 16,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "nbtlib-1.0-SNAPSHOT.jar",
+          "url": "nbtlib-1.0-SNAPSHOT.jar",
+          "size": 29072,
+          "sha512": "61bf16dda577d1463f230ab8741a9376208e63ba944f022e61c3fee9ac452be92fede8ca50826ffa9e3bf49b4e246449d8c502ceac2a835936b2572683def3cf",
+          "sha256": "f9c28d9d6490a2ee41010f16e8656601446a8c477a41c99d1c346860a958f2b1",
+          "sha1": "04d97689efb633b6e4ccf8beb943937e9e1f363c",
+          "md5": "372e911e492808feaaa73be52107628c"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 16,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "nbtlib-1.0-SNAPSHOT.jar",
+          "url": "nbtlib-1.0-SNAPSHOT.jar",
+          "size": 29072,
+          "sha512": "61bf16dda577d1463f230ab8741a9376208e63ba944f022e61c3fee9ac452be92fede8ca50826ffa9e3bf49b4e246449d8c502ceac2a835936b2572683def3cf",
+          "sha256": "f9c28d9d6490a2ee41010f16e8656601446a8c477a41c99d1c346860a958f2b1",
+          "sha1": "04d97689efb633b6e4ccf8beb943937e9e1f363c",
+          "md5": "372e911e492808feaaa73be52107628c"
+        }
+      ]
+    }
+  ]
+}
