@@ -3,7 +3,7 @@
   "component": {
     "group": "net.iceyleagons",
     "module": "nbtlib",
-    "version": "3.0-SNAPSHOT",
+    "version": "3.1-SNAPSHOT",
     "attributes": {
       "org.gradle.status": "integration"
     }
@@ -25,13 +25,13 @@
       },
       "files": [
         {
-          "name": "nbtlib-3.0-SNAPSHOT.jar",
-          "url": "nbtlib-3.0-SNAPSHOT.jar",
-          "size": 36884,
-          "sha512": "c003d2bb1f55442e69f695bc7645bcf7a9db91a6e1f55b2c2c6bc15004dc91554244018f4e884f84ba0a56587015d7609503f3163b806b332d7536e9a6d85ddb",
-          "sha256": "bcc868cc3868134c0b1e1b22124593a4f353c5ed4e1deaeb5aaa7f355fb6f90e",
-          "sha1": "a735806bd90c2b234203e58212c3e4ca615d0af4",
-          "md5": "1bef5eb0be7dfe33ed9248fff31563f4"
+          "name": "nbtlib-3.1-SNAPSHOT.jar",
+          "url": "nbtlib-3.1-SNAPSHOT.jar",
+          "size": 36885,
+          "sha512": "2e4b5e59bfa44cfd153dec6668dc59f5c7a66bbc1ac83ec40df5683fa0086d5c9ed1e8d356175cd3c50a8ea47090d6da8bfc5dc4badff02613135fd5ce9e8cfa",
+          "sha256": "8c213eb124ac271f4ff84baecda5437df3406140478c77dfd9e9b25830e9760a",
+          "sha1": "b5b1234795ef2e3fab25c2ae6c1295d50787e700",
+          "md5": "d8fb92c2373352001a3c9e0a0534dace"
         }
       ]
     },
@@ -46,13 +46,13 @@
       },
       "files": [
         {
-          "name": "nbtlib-3.0-SNAPSHOT.jar",
-          "url": "nbtlib-3.0-SNAPSHOT.jar",
-          "size": 36884,
-          "sha512": "c003d2bb1f55442e69f695bc7645bcf7a9db91a6e1f55b2c2c6bc15004dc91554244018f4e884f84ba0a56587015d7609503f3163b806b332d7536e9a6d85ddb",
-          "sha256": "bcc868cc3868134c0b1e1b22124593a4f353c5ed4e1deaeb5aaa7f355fb6f90e",
-          "sha1": "a735806bd90c2b234203e58212c3e4ca615d0af4",
-          "md5": "1bef5eb0be7dfe33ed9248fff31563f4"
+          "name": "nbtlib-3.1-SNAPSHOT.jar",
+          "url": "nbtlib-3.1-SNAPSHOT.jar",
+          "size": 36885,
+          "sha512": "2e4b5e59bfa44cfd153dec6668dc59f5c7a66bbc1ac83ec40df5683fa0086d5c9ed1e8d356175cd3c50a8ea47090d6da8bfc5dc4badff02613135fd5ce9e8cfa",
+          "sha256": "8c213eb124ac271f4ff84baecda5437df3406140478c77dfd9e9b25830e9760a",
+          "sha1": "b5b1234795ef2e3fab25c2ae6c1295d50787e700",
+          "md5": "d8fb92c2373352001a3c9e0a0534dace"
         }
       ]
     }
