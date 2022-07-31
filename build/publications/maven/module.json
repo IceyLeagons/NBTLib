@@ -3,7 +3,7 @@
   "component": {
     "group": "net.iceyleagons",
     "module": "nbtlib",
-    "version": "1.0-SNAPSHOT",
+    "version": "1.5-SNAPSHOT",
     "attributes": {
       "org.gradle.status": "integration"
     }
@@ -25,13 +25,13 @@
       },
       "files": [
         {
-          "name": "nbtlib-1.0-SNAPSHOT.jar",
-          "url": "nbtlib-1.0-SNAPSHOT.jar",
-          "size": 29072,
-          "sha512": "61bf16dda577d1463f230ab8741a9376208e63ba944f022e61c3fee9ac452be92fede8ca50826ffa9e3bf49b4e246449d8c502ceac2a835936b2572683def3cf",
-          "sha256": "f9c28d9d6490a2ee41010f16e8656601446a8c477a41c99d1c346860a958f2b1",
-          "sha1": "04d97689efb633b6e4ccf8beb943937e9e1f363c",
-          "md5": "372e911e492808feaaa73be52107628c"
+          "name": "nbtlib-1.5-SNAPSHOT.jar",
+          "url": "nbtlib-1.5-SNAPSHOT.jar",
+          "size": 29052,
+          "sha512": "c0bb24cdd2a57828d57d67de3a82bb3b6d8c77cdbfb1605f4df4bf29f855ec0ced3ee14545274650a879c531d7dc39964ffdb98ee78d396050b31d34f3092446",
+          "sha256": "c839e17d7585ddf9e05bb20a965b8ec49899d02f54b1c8e8d8da316dde0fda99",
+          "sha1": "77a3fd493a4b3092e43ae3e0c6339d037045ece2",
+          "md5": "68dd3c5668842654d2e75e86758fc122"
         }
       ]
     },
@@ -46,13 +46,13 @@
       },
       "files": [
         {
-          "name": "nbtlib-1.0-SNAPSHOT.jar",
-          "url": "nbtlib-1.0-SNAPSHOT.jar",
-          "size": 29072,
-          "sha512": "61bf16dda577d1463f230ab8741a9376208e63ba944f022e61c3fee9ac452be92fede8ca50826ffa9e3bf49b4e246449d8c502ceac2a835936b2572683def3cf",
-          "sha256": "f9c28d9d6490a2ee41010f16e8656601446a8c477a41c99d1c346860a958f2b1",
-          "sha1": "04d97689efb633b6e4ccf8beb943937e9e1f363c",
-          "md5": "372e911e492808feaaa73be52107628c"
+          "name": "nbtlib-1.5-SNAPSHOT.jar",
+          "url": "nbtlib-1.5-SNAPSHOT.jar",
+          "size": 29052,
+          "sha512": "c0bb24cdd2a57828d57d67de3a82bb3b6d8c77cdbfb1605f4df4bf29f855ec0ced3ee14545274650a879c531d7dc39964ffdb98ee78d396050b31d34f3092446",
+          "sha256": "c839e17d7585ddf9e05bb20a965b8ec49899d02f54b1c8e8d8da316dde0fda99",
+          "sha1": "77a3fd493a4b3092e43ae3e0c6339d037045ece2",
+          "md5": "68dd3c5668842654d2e75e86758fc122"
         }
       ]
     }

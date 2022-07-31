@@ -3,10 +3,11 @@
   <groupId>net.iceyleagons</groupId>
   <artifactId>nbtlib</artifactId>
   <versioning>
-    <latest>1.0-SNAPSHOT</latest>
+    <latest>1.5-SNAPSHOT</latest>
     <versions>
       <version>1.0-SNAPSHOT</version>
+      <version>1.5-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20220710110033</lastUpdated>
+    <lastUpdated>20220731132640</lastUpdated>
   </versioning>
 </metadata>

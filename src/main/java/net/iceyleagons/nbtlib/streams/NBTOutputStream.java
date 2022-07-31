@@ -157,7 +157,7 @@ public class NBTOutputStream implements Closeable, AutoCloseable {
 
     private void write(final LongArrayTag tag) throws IOException {
         final long[] data = tag.getValue();
-        this.outputStream.writeLong(data.length);
+        this.outputStream.writeInt(data.length);
         for (long number : data) {
             this.outputStream.writeLong(number);
         }
