@@ -59,7 +59,7 @@ public class CompoundTag extends Tag {
         putTag(tag.getName(), tag);
     }
 
-    private void putTag(String name, Tag value) {
+    public void putTag(String name, Tag value) {
         this.value.put(name, value);
     }
 
