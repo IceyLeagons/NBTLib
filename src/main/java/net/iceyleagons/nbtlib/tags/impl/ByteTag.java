@@ -22,11 +22,11 @@
  * SOFTWARE.
  */
 
-package net.iceyleagons.nbtlib.tags;
+package net.iceyleagons.nbtlib.tags.impl;
 
 import lombok.EqualsAndHashCode;
-import net.iceyleagons.nbtlib.Tag;
-import net.iceyleagons.nbtlib.TagTypes;
+import net.iceyleagons.nbtlib.tags.Tag;
+import net.iceyleagons.nbtlib.tags.TagTypes;
 
 /**
  * @author TOTHTOMI

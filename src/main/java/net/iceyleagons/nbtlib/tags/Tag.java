@@ -25,33 +25,31 @@
 package net.iceyleagons.nbtlib.tags;
 
 import lombok.EqualsAndHashCode;
-import net.iceyleagons.nbtlib.Tag;
-import net.iceyleagons.nbtlib.TagTypes;
-
-import java.util.Arrays;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 /**
  * @author TOTHTOMI
  * @version 1.0.0
  * @since Mar. 15, 2022
  */
-@EqualsAndHashCode(callSuper = true)
-public class LongArrayTag extends Tag {
+@Getter
+@EqualsAndHashCode
+@RequiredArgsConstructor
+public abstract class Tag {
 
-    private final long[] value;
+    private final String name;
+    private final TagTypes type;
 
-    public LongArrayTag(final String name, final long[] value) {
-        super(name, TagTypes.LONG_ARRAY);
-        this.value = value;
-    }
+    public abstract Object getValue();
 
-    @Override
-    public long[] getValue() {
-        return this.value;
-    }
+    protected String getToString(String value) {
+        final String name = getName();
+        String append = "";
+        if ((name != null) && !name.equals("")) {
+            append = "(\"" + getName() + "\")";
+        }
 
-    @Override
-    public String toString() {
-        return super.getToString(Arrays.toString(value));
+        return type.getName() + append + ": " + value;
     }
 }

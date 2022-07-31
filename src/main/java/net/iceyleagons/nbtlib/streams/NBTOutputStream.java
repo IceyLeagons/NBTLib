@@ -24,9 +24,17 @@
 
 package net.iceyleagons.nbtlib.streams;
 
-import net.iceyleagons.nbtlib.Tag;
-import net.iceyleagons.nbtlib.TagTypes;
-import net.iceyleagons.nbtlib.tags.*;
+import net.iceyleagons.nbtlib.tags.Tag;
+import net.iceyleagons.nbtlib.tags.TagTypes;
+import net.iceyleagons.nbtlib.compression.CompressionStrategy;
+import net.iceyleagons.nbtlib.tags.impl.CompoundTag;
+import net.iceyleagons.nbtlib.tags.impl.ListTag;
+import net.iceyleagons.nbtlib.tags.impl.StringTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.ByteArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.ByteTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.IntArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.LongArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.numbers.*;
 
 import java.io.Closeable;
 import java.io.DataOutputStream;
@@ -34,7 +42,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.zip.GZIPOutputStream;
 
 /**
  * @author TOTHTOMI
@@ -46,15 +53,11 @@ public class NBTOutputStream implements Closeable, AutoCloseable {
     private final DataOutputStream outputStream;
 
     public NBTOutputStream(OutputStream outputStream) throws IOException {
-        this(outputStream, true);
+        this(outputStream, CompressionStrategy.GZIP);
     }
 
-    public NBTOutputStream(OutputStream outputStream, boolean gzipped) throws IOException {
-        if (gzipped) {
-            outputStream = new GZIPOutputStream(outputStream);
-        }
-
-        this.outputStream = new DataOutputStream(outputStream);
+    public NBTOutputStream(OutputStream outputStream, CompressionStrategy compressionStrategy) throws IOException {
+        this.outputStream = new DataOutputStream(compressionStrategy.getCompressor().compress(outputStream));
     }
 
     public void writeTag(final Tag tag) throws IOException {

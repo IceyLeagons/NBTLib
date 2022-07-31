@@ -22,11 +22,15 @@
  * SOFTWARE.
  */
 
-package net.iceyleagons.nbtlib;
+package net.iceyleagons.nbtlib.tags;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import net.iceyleagons.nbtlib.tags.*;
+import net.iceyleagons.nbtlib.tags.impl.*;
+import net.iceyleagons.nbtlib.tags.impl.arrays.ByteArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.IntArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.LongArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.numbers.*;
 
 import java.util.Arrays;
 

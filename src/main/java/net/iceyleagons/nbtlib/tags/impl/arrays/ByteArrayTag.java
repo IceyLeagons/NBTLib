@@ -22,11 +22,13 @@
  * SOFTWARE.
  */
 
-package net.iceyleagons.nbtlib.tags;
+package net.iceyleagons.nbtlib.tags.impl.arrays;
 
 import lombok.EqualsAndHashCode;
-import net.iceyleagons.nbtlib.Tag;
-import net.iceyleagons.nbtlib.TagTypes;
+import net.iceyleagons.nbtlib.tags.Tag;
+import net.iceyleagons.nbtlib.tags.TagTypes;
+
+import java.util.Arrays;
 
 /**
  * @author TOTHTOMI
@@ -34,22 +36,22 @@ import net.iceyleagons.nbtlib.TagTypes;
  * @since Mar. 15, 2022
  */
 @EqualsAndHashCode(callSuper = true)
-public class StringTag extends Tag {
+public class ByteArrayTag extends Tag {
 
-    private final String value;
+    private final byte[] value;
 
-    public StringTag(final String name, final String value) {
-        super(name, TagTypes.STRING);
+    public ByteArrayTag(final String name, final byte[] value) {
+        super(name, TagTypes.BYTE_ARRAY);
         this.value = value;
     }
 
     @Override
-    public String getValue() {
+    public byte[] getValue() {
         return this.value;
     }
 
     @Override
     public String toString() {
-        return super.getToString(this.value);
+        return super.getToString(Arrays.toString(this.value));
     }
 }

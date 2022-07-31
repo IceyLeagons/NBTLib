@@ -22,35 +22,34 @@
  * SOFTWARE.
  */
 
-package net.iceyleagons.nbtlib;
+package net.iceyleagons.nbtlib.tags.impl.numbers;
 
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import net.iceyleagons.nbtlib.tags.*;
+import net.iceyleagons.nbtlib.tags.Tag;
+import net.iceyleagons.nbtlib.tags.TagTypes;
 
 /**
  * @author TOTHTOMI
  * @version 1.0.0
  * @since Mar. 15, 2022
  */
-@Getter
-@EqualsAndHashCode
-@RequiredArgsConstructor
-public abstract class Tag {
+@EqualsAndHashCode(callSuper = true)
+public class IntTag extends Tag {
 
-    private final String name;
-    private final TagTypes type;
+    private final int value;
 
-    public abstract Object getValue();
+    public IntTag(final String name, final int value) {
+        super(name, TagTypes.INT);
+        this.value = value;
+    }
 
-    protected String getToString(String value) {
-        final String name = getName();
-        String append = "";
-        if ((name != null) && !name.equals("")) {
-            append = "(\"" + getName() + "\")";
-        }
+    @Override
+    public Integer getValue() {
+        return this.value;
+    }
 
-        return type.getName() + append + ": " + value;
+    @Override
+    public String toString() {
+        return super.getToString(String.valueOf(this.value));
     }
 }

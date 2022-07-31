@@ -22,11 +22,15 @@
  * SOFTWARE.
  */
 
-package net.iceyleagons.nbtlib.tags;
+package net.iceyleagons.nbtlib.tags.impl;
 
 import lombok.EqualsAndHashCode;
-import net.iceyleagons.nbtlib.Tag;
-import net.iceyleagons.nbtlib.TagTypes;
+import net.iceyleagons.nbtlib.tags.Tag;
+import net.iceyleagons.nbtlib.tags.TagTypes;
+import net.iceyleagons.nbtlib.tags.impl.arrays.ByteArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.IntArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.LongArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.numbers.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -54,7 +58,7 @@ public class CompoundTag extends Tag {
         putTag(tag.getName(), tag);
     }
 
-    public void putTag(String name, Tag value) {
+    private void putTag(String name, Tag value) {
         this.value.put(name, value);
     }
 
@@ -67,6 +71,68 @@ public class CompoundTag extends Tag {
         }
 
         return type.cast(tag);
+    }
+
+    public boolean has(String name) {
+        return this.value.containsKey(name);
+    }
+
+    public byte[] getByteArray(String name) {
+        ByteArrayTag tag = getTag(name, ByteArrayTag.class);
+        return tag == null ? null : tag.getValue();
+    }
+
+    public Byte getByte(String name) {
+        ByteTag tag = getTag(name, ByteTag.class);
+        return tag == null ? null : tag.getValue();
+    }
+
+    public CompoundTag getCompound(String name) {
+        return getTag(name, CompoundTag.class);
+    }
+
+    public Double getDouble(String name) {
+        DoubleTag tag = getTag(name, DoubleTag.class);
+        return tag == null ? null : tag.getValue();
+    }
+
+    public Float getFloat(String name) {
+        FloatTag tag = getTag(name, FloatTag.class);
+        return tag == null ? null : tag.getValue();
+    }
+
+    public int[] getIntArray(String name) {
+        IntArrayTag tag = getTag(name, IntArrayTag.class);
+        return tag == null ? null : tag.getValue();
+    }
+
+    public Integer getInt(String name) {
+        IntTag tag = getTag(name, IntTag.class);
+        return tag == null ? null : tag.getValue();
+    }
+
+    public ListTag getList(String name) {
+        return getTag(name, ListTag.class);
+    }
+
+    public long[] getLongArray(String name) {
+        LongArrayTag tag = getTag(name, LongArrayTag.class);
+        return tag == null ? null : tag.getValue();
+    }
+
+    public Long getLong(String name) {
+        LongTag tag = getTag(name, LongTag.class);
+        return tag == null ? null : tag.getValue();
+    }
+
+    public Short getShort(String name) {
+        ShortTag tag = getTag(name, ShortTag.class);
+        return tag == null ? null : tag.getValue();
+    }
+
+    public String getString(String name) {
+        StringTag tag = getTag(name, StringTag.class);
+        return tag == null ? null : tag.getValue();
     }
 
     @Override

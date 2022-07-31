@@ -22,11 +22,11 @@
  * SOFTWARE.
  */
 
-package net.iceyleagons.nbtlib.tags;
+package net.iceyleagons.nbtlib.tags.impl.numbers;
 
 import lombok.EqualsAndHashCode;
-import net.iceyleagons.nbtlib.Tag;
-import net.iceyleagons.nbtlib.TagTypes;
+import net.iceyleagons.nbtlib.tags.Tag;
+import net.iceyleagons.nbtlib.tags.TagTypes;
 
 /**
  * @author TOTHTOMI
@@ -34,17 +34,17 @@ import net.iceyleagons.nbtlib.TagTypes;
  * @since Mar. 15, 2022
  */
 @EqualsAndHashCode(callSuper = true)
-public class LongTag extends Tag {
+public class ShortTag extends Tag {
 
-    private final long value;
+    private final short value;
 
-    public LongTag(final String name, final long value) {
-        super(name, TagTypes.LONG);
+    public ShortTag(final String name, final short value) {
+        super(name, TagTypes.SHORT);
         this.value = value;
     }
 
     @Override
-    public Long getValue() {
+    public Short getValue() {
         return this.value;
     }
 

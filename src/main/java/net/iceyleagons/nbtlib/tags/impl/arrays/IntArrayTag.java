@@ -22,46 +22,36 @@
  * SOFTWARE.
  */
 
-package net.iceyleagons.nbtlib.tags;
+package net.iceyleagons.nbtlib.tags.impl.arrays;
 
-import lombok.Getter;
-import net.iceyleagons.nbtlib.Tag;
-import net.iceyleagons.nbtlib.TagTypes;
+import lombok.EqualsAndHashCode;
+import net.iceyleagons.nbtlib.tags.Tag;
+import net.iceyleagons.nbtlib.tags.TagTypes;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.Arrays;
 
 /**
  * @author TOTHTOMI
  * @version 1.0.0
  * @since Mar. 15, 2022
  */
-public class ListTag extends Tag {
+@EqualsAndHashCode(callSuper = true)
+public class IntArrayTag extends Tag {
 
-    @Getter
-    private final TagTypes internalType;
-    private final List<Tag> value;
+    private final int[] value;
 
-    public ListTag(String name, final TagTypes internalType, final List<Tag> value) {
-        super(name, TagTypes.LIST);
-        this.internalType = internalType;
-        this.value = Collections.unmodifiableList(value);
+    public IntArrayTag(final String name, final int[] value) {
+        super(name, TagTypes.INT_ARRAY);
+        this.value = value;
     }
 
     @Override
-    public List<Tag> getValue() {
+    public int[] getValue() {
         return this.value;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder();
-        sb.append(value.size()).append(" entries of type ").append(internalType.getName()).append("\r\n{\r\n");
-        for (final Tag t : value) {
-            sb.append("   ").append(t.toString().replaceAll("\r\n", "\r\n   ")).append("\r\n");
-        }
-        sb.append("}");
-
-        return super.getToString(sb.toString());
+        return super.getToString(Arrays.toString(value));
     }
 }

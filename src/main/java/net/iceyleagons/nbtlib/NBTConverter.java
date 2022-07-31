@@ -25,6 +25,14 @@
 package net.iceyleagons.nbtlib;
 
 import net.iceyleagons.nbtlib.tags.*;
+import net.iceyleagons.nbtlib.tags.impl.CompoundTag;
+import net.iceyleagons.nbtlib.tags.impl.ListTag;
+import net.iceyleagons.nbtlib.tags.impl.StringTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.ByteArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.ByteTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.IntArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.LongArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.numbers.*;
 
 import java.util.List;
 import java.util.Map;
@@ -58,7 +66,7 @@ public final class NBTConverter {
             return FloatTag.class;
         } else if (javaType.equals(double.class) || javaType.equals(Double.class)) {
             return DoubleTag.class;
-        } else if (javaType.equals(byte.class) || javaType.equals(Byte.class)) {
+        } else if (javaType.equals(byte.class) || javaType.equals(Byte.class) || javaType.equals(boolean.class) || javaType.equals(Boolean.class)) {
             return ByteTag.class;
         } else if (javaType.equals(byte[].class) || javaType.equals(Byte[].class)) {
             return ByteArrayTag.class;
@@ -91,6 +99,9 @@ public final class NBTConverter {
             return new DoubleTag(name, (double) value);
         } else if (javaType.equals(byte.class) || javaType.equals(Byte.class)) {
             return new ByteTag(name, (byte) value);
+        } else if (javaType.equals(boolean.class) || javaType.equals(Boolean.class)) {
+            boolean bool = (boolean) value;
+            return new ByteTag(name, (byte) (bool ? 1 : 0));
         } else if (javaType.equals(byte[].class) || javaType.equals(Byte[].class)) {
             return new ByteArrayTag(name, (byte[]) value);
         } else {

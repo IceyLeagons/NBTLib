@@ -24,9 +24,14 @@
 
 package net.iceyleagons.nbtlib.streams;
 
-import net.iceyleagons.nbtlib.Tag;
-import net.iceyleagons.nbtlib.TagTypes;
-import net.iceyleagons.nbtlib.tags.*;
+import net.iceyleagons.nbtlib.tags.Tag;
+import net.iceyleagons.nbtlib.tags.TagTypes;
+import net.iceyleagons.nbtlib.compression.CompressionStrategy;
+import net.iceyleagons.nbtlib.tags.impl.*;
+import net.iceyleagons.nbtlib.tags.impl.arrays.ByteArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.IntArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.arrays.LongArrayTag;
+import net.iceyleagons.nbtlib.tags.impl.numbers.*;
 
 import java.io.Closeable;
 import java.io.DataInputStream;
@@ -37,7 +42,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.zip.GZIPInputStream;
 
 /**
  * @author TOTHTOMI
@@ -49,15 +53,11 @@ public class NBTInputStream implements Closeable, AutoCloseable {
     private final DataInputStream inputStream;
 
     public NBTInputStream(InputStream inputStream) throws IOException {
-        this(inputStream, true);
+        this(inputStream, CompressionStrategy.GZIP);
     }
 
-    public NBTInputStream(InputStream inputStream, boolean gzipped) throws IOException {
-        if (gzipped) {
-            inputStream = new GZIPInputStream(inputStream);
-        }
-
-        this.inputStream = new DataInputStream(inputStream);
+    public NBTInputStream(InputStream inputStream, CompressionStrategy compressionStrategy) throws IOException {
+        this.inputStream = new DataInputStream(compressionStrategy.getCompressor().decompress(inputStream));
     }
 
     public Tag readTag() throws IOException {

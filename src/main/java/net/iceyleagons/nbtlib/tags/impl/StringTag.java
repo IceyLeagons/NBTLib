@@ -22,11 +22,11 @@
  * SOFTWARE.
  */
 
-package net.iceyleagons.nbtlib.tags;
+package net.iceyleagons.nbtlib.tags.impl;
 
 import lombok.EqualsAndHashCode;
-import net.iceyleagons.nbtlib.Tag;
-import net.iceyleagons.nbtlib.TagTypes;
+import net.iceyleagons.nbtlib.tags.Tag;
+import net.iceyleagons.nbtlib.tags.TagTypes;
 
 /**
  * @author TOTHTOMI
@@ -34,22 +34,22 @@ import net.iceyleagons.nbtlib.TagTypes;
  * @since Mar. 15, 2022
  */
 @EqualsAndHashCode(callSuper = true)
-public class FloatTag extends Tag {
+public class StringTag extends Tag {
 
-    private final float value;
+    private final String value;
 
-    public FloatTag(final String name, final float value) {
-        super(name, TagTypes.FLOAT);
+    public StringTag(final String name, final String value) {
+        super(name, TagTypes.STRING);
         this.value = value;
     }
 
     @Override
-    public Float getValue() {
+    public String getValue() {
         return this.value;
     }
 
     @Override
     public String toString() {
-        return super.getToString(String.valueOf(this.value));
+        return super.getToString(this.value);
     }
 }

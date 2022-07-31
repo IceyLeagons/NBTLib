@@ -22,34 +22,53 @@
  * SOFTWARE.
  */
 
-package net.iceyleagons.nbtlib.tags;
+package net.iceyleagons.nbtlib.tags.impl;
 
-import lombok.EqualsAndHashCode;
-import net.iceyleagons.nbtlib.Tag;
-import net.iceyleagons.nbtlib.TagTypes;
+import lombok.Getter;
+import net.iceyleagons.nbtlib.tags.Tag;
+import net.iceyleagons.nbtlib.tags.TagTypes;
+
+import java.util.*;
 
 /**
  * @author TOTHTOMI
  * @version 1.0.0
  * @since Mar. 15, 2022
  */
-@EqualsAndHashCode(callSuper = true)
-public class DoubleTag extends Tag {
+public class ListTag extends Tag {
 
-    private final double value;
+    @Getter
+    private final TagTypes internalType;
+    private final List<Tag> value;
 
-    public DoubleTag(final String name, final double value) {
-        super(name, TagTypes.DOUBLE);
-        this.value = value;
+    public ListTag(String name, final TagTypes internalType, final List<Tag> value) {
+        super(name, TagTypes.LIST);
+        this.internalType = internalType;
+        this.value = Collections.unmodifiableList(value);
+    }
+
+    public int size() {
+        return this.value.size();
+    }
+
+    public boolean isEmpty() {
+        return this.value.isEmpty();
     }
 
     @Override
-    public Double getValue() {
+    public List<Tag> getValue() {
         return this.value;
     }
 
     @Override
     public String toString() {
-        return super.getToString(String.valueOf(this.value));
+        final StringBuilder sb = new StringBuilder();
+        sb.append(value.size()).append(" entries of type ").append(internalType.getName()).append("\r\n{\r\n");
+        for (final Tag t : value) {
+            sb.append("   ").append(t.toString().replaceAll("\r\n", "\r\n   ")).append("\r\n");
+        }
+        sb.append("}");
+
+        return super.getToString(sb.toString());
     }
 }
