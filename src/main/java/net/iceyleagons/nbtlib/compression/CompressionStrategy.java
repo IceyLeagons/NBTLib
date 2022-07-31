@@ -49,19 +49,15 @@ public enum CompressionStrategy {
             new Compressor() {
                 @Override
                 public InputStream decompress(InputStream input) throws IOException {
-                    return new InflaterInputStream(input, ZLIB_INFLATER, ZLIB_BUFFER_SIZE);
+                    return new InflaterInputStream(input);
                 }
 
                 @Override
                 public OutputStream compress(OutputStream out) throws IOException {
-                    return new DeflaterOutputStream(out, ZLIB_DEFLATER, ZLIB_BUFFER_SIZE);
+                    return new DeflaterOutputStream(out);
                 }
             }
     );
-
-    private static final Inflater ZLIB_INFLATER = new Inflater();
-    private static final Deflater ZLIB_DEFLATER = new Deflater();
-    private static final int ZLIB_BUFFER_SIZE = 512;
 
     private final Compressor compressor;
 }

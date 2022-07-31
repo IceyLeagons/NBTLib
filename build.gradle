@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'net.iceyleagons'
-version '3.1-SNAPSHOT'
+version '3.2-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -23,7 +23,7 @@ publishing {
 		maven(MavenPublication) {
 			groupId = 'net.iceyleagons'
 			artifactId = 'nbtlib'
-			version = '3.1-SNAPSHOT'
+			version = '3.2-SNAPSHOT'
 			
 			from components.java
 		}
