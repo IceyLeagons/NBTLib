@@ -25,6 +25,7 @@
 package net.iceyleagons.nbtlib.tags.impl;
 
 import lombok.EqualsAndHashCode;
+import net.iceyleagons.nbtlib.NBT;
 import net.iceyleagons.nbtlib.tags.Tag;
 import net.iceyleagons.nbtlib.tags.TagTypes;
 import net.iceyleagons.nbtlib.tags.impl.arrays.ByteArrayTag;
@@ -75,6 +76,46 @@ public class CompoundTag extends Tag {
 
     public boolean has(String name) {
         return this.value.containsKey(name);
+    }
+
+    public void put(String name, byte[] value) {
+        putTag(NBT.of(name, value));
+    }
+
+    public void put(String name, byte value) {
+        putTag(NBT.of(name, value));
+    }
+
+    public void put(String name, double value) {
+        putTag(NBT.of(name, value));
+    }
+
+    public void put(String name, float value) {
+        putTag(NBT.of(name, value));
+    }
+
+    public void put(String name, int[] value) {
+        putTag(NBT.of(name, value));
+    }
+
+    public void put(String name, int value) {
+        putTag(NBT.of(name, value));
+    }
+
+    public void put(String name, long[] value) {
+        putTag(NBT.of(name, value));
+    }
+
+    public void put(String name, long value) {
+        putTag(NBT.of(name, value));
+    }
+
+    public void put(String name, short value) {
+        putTag(NBT.of(name, value));
+    }
+
+    public void put(String name, String value) {
+        putTag(NBT.of(name, value));
     }
 
     public byte[] getByteArray(String name) {

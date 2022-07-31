@@ -2,28 +2,28 @@
 <metadata modelVersion="1.1.0">
   <groupId>net.iceyleagons</groupId>
   <artifactId>nbtlib</artifactId>
-  <version>1.5-SNAPSHOT</version>
+  <version>2.0-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20220731.132638</timestamp>
+      <timestamp>20220731.163638</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
-    <lastUpdated>20220731132638</lastUpdated>
+    <lastUpdated>20220731163638</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
-        <extension>module</extension>
-        <value>1.5-20220731.132638-1</value>
-        <updated>20220731132638</updated>
+        <extension>pom</extension>
+        <value>2.0-20220731.163638-1</value>
+        <updated>20220731163638</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.5-20220731.132638-1</value>
-        <updated>20220731132638</updated>
+        <value>2.0-20220731.163638-1</value>
+        <updated>20220731163638</updated>
       </snapshotVersion>
       <snapshotVersion>
-        <extension>pom</extension>
-        <value>1.5-20220731.132638-1</value>
-        <updated>20220731132638</updated>
+        <extension>module</extension>
+        <value>2.0-20220731.163638-1</value>
+        <updated>20220731163638</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
